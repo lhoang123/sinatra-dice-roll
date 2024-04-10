@@ -17,21 +17,21 @@ get("/dice/2/6") do
   second_dice = rand(1..6)
   sum = first_dice + second_dice
 
-  outcome = "You rolled a #{first_dice} and a #{second_dice} for a total of #{sum}."
-  "<h1>2d6</h1>
-  <p>#{outcome}</p>"
+  @outcome = "You rolled a #{first_dice} and a #{second_dice} for a total of #{sum}."
+
+  erb(:two_six)
 end 
+
 
 get("/dice/2/10") do
   first_dice = rand(1..10)
   second_dice = rand(1..10)
 
-  sum = first_dice + second_die
+  sum = first_dice + second_dice
 
-  outcome = "You rolled a #{first_dice} and a #{second_dice} for a total of #{sum}."
+  @outcome = "You rolled a #{first_dice} and a #{second_dice} for a total of #{sum}."
 
-  "<h1>2d10</h1>
-  <p>#{outcome}</p>"
+  erb(:two_ten)
 end 
 
 get("/dice/4/4") do
